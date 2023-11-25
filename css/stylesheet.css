@@ -1,0 +1,235 @@
+@font-face {   /*imports custom otf file into website*/
+  font-family:HelveticaNeue;
+  src: url(../ITCAvantGarde.ttf);
+}
+@keyframes fadeIn {
+	from {opacity:0;}
+	to {opacity:1;}
+  }
+  
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+h1 {
+	margin-bottom:110px;
+}
+
+
+video.headervid {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover; /*allows me to resize video container without video distorting. Instead it'll scale to fit it*/
+	margin-left:-8px;
+	margin-top:-20px;
+}
+
+
+div.pagecontainer {
+	position: relative;
+	margin:0px 10vw;
+	max-height: 80vh;
+	max-width: 80vw;
+	flex:1 0 auto;
+
+}
+
+* {
+
+	font-family:'HelveticaNeue', Helvetica, sans-serif; /*uses Helvetica Neue (font imported from root folder), then Helvetica in case there is a problem with the first font, then a generic sans-serif font if Helvetica is not installed*/
+}
+
+.dimcontainer {
+  position: relative;
+}
+
+.dimcontainer:before {
+	content: ""; /*needed for dim effect*/
+	position: absolute;
+	left: 0; right: 0;
+	top: 0; bottom: 0;
+	background: rgba(0,0,0,.5);
+	margin: -20px -8px 0px -8px;
+	text-align:center;
+	
+}
+
+.fade-in {
+	animation: fadeIn ease 1s; /*fades in whatever is using the tag for 1 second*/
+}
+  
+img {
+   display: block;
+	max-width:230px;
+	max-height:95px;
+	width: auto;
+	height: auto;
+	margin:0 auto;
+}
+  
+  
+h2, p.bodytext {
+	padding:20px;
+	text-align: center;
+	margin: auto;
+	opacity:0;
+    animation-name: fadeIn;
+	animation-duration: .8s; 
+	animation-delay: 1.5s; /*waits a second before animation appears*/
+	animation-fill-mode: forwards; /*keeps text opaque after animation instead of reverting */
+}
+
+.centerHeaderText {
+	content: ""; /*needed for dim effect*/
+	position:absolute;
+	padding-bottom:5vh;
+	left: 0; right: 0;
+	bottom:0;
+	text-align:center;
+	color:#ffffff;
+	font-size:40pt;
+ 	animation-name: fadeIn;
+	animation-duration: .8s;
+	animation-delay: 0.5s;
+	opacity:0;
+	animation-fill-mode: forwards;
+
+}
+
+
+
+
+.centerHeaderParagraph {
+	content: ""; /*needed for dim effect*/
+	position: absolute;
+	left: 0; right: 0;
+	bottom:0;
+	padding-bottom:10vh;
+	text-align:center;
+	color:#ffffff;
+	font-size:23pt;
+	opacity:0;
+	animation-name: fadeIn;
+	animation-duration: .8s; /* animation takes place in 0.8 secs*/
+	animation-delay: 1.5s; /* waits a second and a half before animation appears */
+	animation-fill-mode: forwards; /* keeps text opaque after animation instead of reverting */
+}
+table {
+	opacity:0;
+ 	animation-name: fadeIn;
+	animation-duration: .8s;
+	animation-delay: 1.5s; 
+	animation-fill-mode: forwards; 
+}
+
+
+p.footerRight {
+	display: inline-flex;
+}
+a {
+	text-decoration:none;
+	font-weight:none;
+	color: #000000;
+	text-align: center;
+	margin: auto;
+}
+ul {
+	text-align: center;
+
+}
+
+
+.navbar { 
+	border:thin solid #fff;
+	background:rgb(190, 190, 190);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	position: sticky; /*allows navbar to move with screen once it is at top of page */
+	top:10px;
+	left:1px; 
+	right:1px;
+	width:101%;
+	z-index: 1; /* makes navbar appear over text*/
+	
+}
+li {
+	display: inline-block;
+	
+}
+
+
+
+.navbar li:not(:last-child) a::after { /*displays | after each element except for last one*/
+  content: " | ";
+  color: grey;
+}
+
+/* The below two rule sets are examples of pseudo classes, which are useful if you want certain html elements to react once something happens to them, e.g. you roll your mouse over it, or if it is a link, if you've already visited it*/
+li a:link {
+  text-decoration: none;
+}
+li a:hover {
+	transition: all 1s ease 0;
+	color:#00009b;
+	text-decoration: underline;
+	font-weight:bold;
+	
+	
+}
+
+
+.table {
+    border-collapse: collapse; /*removes padding from borders making it look more like a table instead of a bunch of borders around text*/
+    margin: 20px 0;
+    font-size: 10pt;
+    min-width: 400px; /*ensures table wont be too compressed when window is resized*/
+	margin-left: auto; /*centers table*/
+	margin-right: auto; /*centers table*/
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /*adds nice shadow around sides*/
+}
+
+.table thead tr {
+    background-color:  #999999;
+    color: #ffffff;
+    text-align: left;
+	font-size: 1.2em;
+}
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #000000;
+}
+
+.table tbody tr:nth-of-type(even) { /*zebra striped table setup on every even row*/
+    background-color: #b9b9b9;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: thin solid #646464; /*adds aesthetic border on bottom of table*/
+}
+
+.table tbody tr.active-row {
+    font-weight: bold;
+    color: #575757;
+}
+
+.topofpage {
+	border: 3px solid black;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+input, form {
+	margin: 3px;
+	text-align: center;
+}
+
+button {
+	text-align:center;
+	
